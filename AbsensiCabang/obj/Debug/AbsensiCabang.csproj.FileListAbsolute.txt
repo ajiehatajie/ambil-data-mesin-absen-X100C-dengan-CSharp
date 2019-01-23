@@ -1,0 +1,6 @@
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\AbsensiCabang.exe
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\AbsensiCabang.pdb
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\Interop.zkemkeeper.dll
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.csprojResolveAssemblyReference.cache
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.exe
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.pdb

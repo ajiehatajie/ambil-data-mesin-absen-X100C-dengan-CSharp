@@ -1,0 +1,27 @@
+Pertama install SDK dll  di pc 
+A.
+1.Copy all file dll di folder SDK ke c:\windows\syswow64 folder
+2.buka cmd ( sebagai administrator )
+3.jalan kan perintah cd %windir%\syswow64
+4.jalan kan perintah register dll regsvr32 zkemkeeper.dll
+
+*notice:
+only 64 bit OS need to do this operation!
+B.
+
+Setup Console App 
+Aplkasi ini konek melalui protokol UDP
+
+buka folder conf
+ip.conf -> ip mesin Absen
+port.conf -> isi port mesin absen default nya 4370
+jadwal.conf -> isikan jam dan menit contoh => 23:15
+url.conf -> masukin ip HO untuk kirim data
+terbaru.conf -> jika ingin kirim data yang terbaru saja isikan Y dan jika mengirim semua data isikan N
+
+
+setelah itu tinggal jalankan exe nya 
+note :
+Interop.zkemkeeper.dll sejajar dengan file exe dalam 1 folder
+
+
