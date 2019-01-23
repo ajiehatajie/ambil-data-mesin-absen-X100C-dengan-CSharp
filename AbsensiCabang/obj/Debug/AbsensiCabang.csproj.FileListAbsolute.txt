@@ -4,3 +4,6 @@ D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\Absen
 D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.csprojResolveAssemblyReference.cache
 D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.exe
 D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\obj\Debug\AbsensiCabang.pdb
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\Newtonsoft.Json.dll
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\Newtonsoft.Json.pdb
+D:\ajie\Development Bintang\consoleApp\AbsenCabangSendViaUdp\AbsensiCabang\AbsensiCabang\bin\Debug\Newtonsoft.Json.xml

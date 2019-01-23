@@ -10,27 +10,33 @@ namespace AbsensiCabang
 {
     class Program
     {
-        public string IP;
+      
         static void Main(string[] args)
         {
             Console.WriteLine("console app send absen is running don't close this app \n");
             Console.WriteLine("this app sleep every 45 seconds \n");
-            Log log = new Log();
+
+            zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
+                   
         kembali:
+
             FetchApi sendAbsen = new FetchApi();
             SendMail sendmail = new SendMail();
-            string url = Configurasi.Url().ToString();
-            string MachineIp = Configurasi.IPMesin().ToString();
-            string MachinePort = Configurasi.PortMesin();
-            string cabang = Configurasi.Cabang().ToString();
-            zkemkeeper.CZKEMClass axCZKEM1 = new zkemkeeper.CZKEMClass();
+            Log log = new Log();
+            DataSet ds = new DataSet();
+            var Konfigurasi = Configurasi.LoadJson();
+
+            string url = Konfigurasi.url.ToString();
+            string MachineIp = Konfigurasi.ip.ToString();
+            string MachinePort = Konfigurasi.port.ToString();
+            string cabang = Konfigurasi.cabang.ToString();
             int iMachineNumber = 1;
-            string jadwal = Configurasi.Jadwal().ToString();
-            string DataTerbaru = Configurasi.terbaru().ToString();
+            string jadwal = Konfigurasi.jadwal.ToString();
+            string DataTerbaru = Konfigurasi.terbaru.ToString();
         
 
          
-            DataSet ds = new DataSet();
+           
           
             string datelog = DateTime.Now.ToString("yyyy-MM-dd");
             string CekDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
@@ -61,7 +67,7 @@ namespace AbsensiCabang
                     int idwWorkcode = 0;
 
                     int iGLCount = 0;
-                    int iIndex = 0;
+                 
 
                     Boolean bIsConnected = axCZKEM1.Connect_Net(MachineIp, Convert.ToInt32(MachinePort));
 
@@ -163,7 +169,7 @@ namespace AbsensiCabang
                             }
                             else
                             {
-                                i++;
+                                y++;
                             }
                           
 
@@ -171,6 +177,7 @@ namespace AbsensiCabang
                         Console.WriteLine("Send Data {0} dari total {1} Success Send Data {2} , Failed Send {3} ", i, totalData, i, y);
 
                         sendmail.SendEmailKeIT("Sukses Kirim Absen Cabang " + cabang, "Total Kirim Data success " + i + " \n Gagal Kirim data " + y);
+                       
 
                         #endregion
 
@@ -178,6 +185,8 @@ namespace AbsensiCabang
                     else
                     {
                         Console.WriteLine(DateTime.Now.ToString("yyyy:MM:dd HH:mm:ss") + " Mesin Failed to Connected.");
+                        log.CreateLog("error-konek", "error ke ip ", MachineIp, MachinePort);
+                        sendmail.SendEmailKeIT("Gagal Konek ke Mesin dari cabang " + cabang +"\n ip mesin "+ MachineIp + " PORT " +MachinePort + "Pada jam " + jadwal, "Gagal Konek Cabang" + cabang);
                     }
 
                     #endregion

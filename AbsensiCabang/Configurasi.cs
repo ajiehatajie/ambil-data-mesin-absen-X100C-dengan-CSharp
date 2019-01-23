@@ -3,152 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using Newtonsoft.Json;
+
 namespace AbsensiCabang
 {
+    public class SchemaInfo
+    {
+        public SchemaInfo() { port = 4370 ;}
+        public string ip { get; set; }
+        public Int32 port { get; set; }
+        public string jadwal { get; set; }
+        public string url { get; set; }
+        public string terbaru { get; set; }
+
+        public string cabang { get; set; }
+    }
+
     class Configurasi
     {
+        public string Load { get; set; }
 
-        public static string Cabang()
+
+        public static SchemaInfo LoadJson()
         {
-
-            string conf = Path.GetFullPath(@"conf\\cabang.conf");
-            string line = null;
-            string pathconf = null;
+            string conf = Path.GetFullPath(@"conf\\config.json");
+           
             StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-        public static string Jadwal()
-        {
-
-            string conf = Path.GetFullPath(@"conf\\jadwal.conf");
-            string line = null;
-            string pathconf = null;
-            StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-
-        public static string terbaru()
-        {
-
-            string conf = Path.GetFullPath(@"conf\\terbaru.conf");
-            string line = null;
-            string pathconf = null;
-            StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-        public static string Url()
-        {
-
-            string conf = Path.GetFullPath(@"conf\\url.conf");
-            string line = null;
-            string pathconf = null;
-            StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-
-        public static string IPMesin()
-        {
-
-            string conf = Path.GetFullPath(@"conf\\ip.conf");
-            string line = null;
-            string pathconf = null;
-            StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-        public static string PortMesin()
-        {
-
-            string conf = Path.GetFullPath(@"conf\\port.conf");
-            string line = null;
-            string pathconf = null;
-            StreamReader sr = File.OpenText(conf);
-            while ((line = sr.ReadLine()) != null)
-            {
-                pathconf += line;
-            } sr.Close();
-            if (pathconf == null)
-            {
-                pathconf = "4370";
-            }
-            else
-            {
-                pathconf = pathconf.Trim();
-            }
-
-
-            return pathconf;
-        }
-
+            var json = sr.ReadToEnd();
+            var result = JsonConvert.DeserializeObject<SchemaInfo>(json);
+         
+            return result;
+        
+           
+        } 
+    
 
     }
 }

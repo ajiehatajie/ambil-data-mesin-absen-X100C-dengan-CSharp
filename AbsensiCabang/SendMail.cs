@@ -11,11 +11,11 @@ namespace AbsensiCabang
         public void SendEmailKeIT(string Subject, string msg)
         {
 
-            string email_it = "email@gmail.com";
+            string email_it = "#.it@gmail.com";
             string password_it = "#";
 
             string email_it_1 = "#@yahoo.com";
-            string email_it_2 = "it.#@mail.com";
+            string email_it_2 = "it.#@#.com";
 
 
             Console.WriteLine("Mail To IT");

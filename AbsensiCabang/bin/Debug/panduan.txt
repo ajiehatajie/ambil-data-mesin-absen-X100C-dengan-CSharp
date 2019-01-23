@@ -22,6 +22,7 @@ terbaru.conf -> jika ingin kirim data yang terbaru saja isikan Y dan jika mengir
 
 setelah itu tinggal jalankan exe nya 
 note :
-Interop.zkemkeeper.dll sejajar dengan file exe dalam 1 folder
+Interop.zkemkeeper.dll ,Newtonsoft.Json.dll 
+sejajar dengan file exe dalam 1 folder
 
 
